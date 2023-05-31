@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
+
 struct mad_v1_0App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfileView(user: User.userdummy)
         }
     }
 }
