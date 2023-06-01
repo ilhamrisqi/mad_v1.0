@@ -11,19 +11,25 @@ struct ProfileView: View {
     let user: User
     
     var body: some View {
-        VStack(spacing: 20) {
-            Image("fotoprofile")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 120, height: 120)
-                .clipShape(Circle())
-            
-            Text(user.name)
-                .font(.title)
-                .bold()
-            
-            Text(user.email)
-                .font(.subheadline)
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+//                Image("fotoprofile")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: 80, height: 80)
+//                    .clipShape(Circle())
+//                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+//                    .shadow(radius: 4)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(user.name)
+                        .font(.title)
+                        .bold()
+                    
+                    Text(user.email)
+                        .font(.subheadline)
+                }
+            }
             
             VStack(alignment: .leading, spacing: 10) {
                 Text("About Me")
@@ -37,6 +43,10 @@ struct ProfileView: View {
             Spacer()
         }
         .padding()
+        .foregroundColor(.black)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
     }
 }
 
